@@ -1,0 +1,38 @@
+[project]
+name = "bashforx"
+version = "0.1.0"
+description = "Pendant-drop tensiometry à la Bashforth & Adams: the Young–Laplace equation solved with Diffrax and fitted with Optimistix"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "G. D. McBain" }]
+requires-python = ">=3.10"
+keywords = ["jax", "diffrax", "optimistix", "surface-tension", "pendant-drop", "young-laplace", "tensiometry"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "diffrax>=0.7",
+    "jax>=0.4.38",
+    "numpy>=1.24",
+    "optimistix>=0.0.10",
+]
+
+[project.optional-dependencies]
+examples = ["matplotlib>=3.7"]
+
+[project.urls]
+Repository = "https://github.com/gdmcbain/bashforx"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
